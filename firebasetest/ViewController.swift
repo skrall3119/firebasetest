@@ -40,11 +40,16 @@ class ViewController: UIViewController {
             
         }
     }
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let destination = segue.destination as? EditViewController{
+            destination.recievedObject = notes[(tableView.indexPathForSelectedRow?.row)!]
+        }
+    }
 }
 
 extension ViewController: UITableViewDelegate{
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        print("Selected")
+        performSegue(withIdentifier: "showdetail", sender: self)
     }
 }
 

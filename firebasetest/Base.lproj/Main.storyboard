@@ -27,9 +27,6 @@
                                             <rect key="frame" x="0.0" y="0.0" width="374" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                         </tableViewCellContentView>
-                                        <connections>
-                                            <segue destination="vxk-Ao-fSM" kind="show" id="VEn-gr-nGo"/>
-                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
@@ -54,6 +51,7 @@
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="tableView" destination="qzR-Gj-pby" id="lkJ-E3-a3C"/>
+                        <segue destination="vxk-Ao-fSM" kind="show" identifier="showdetail" id="eaB-Xb-V8Y"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -138,16 +136,14 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ioO-eS-Dgb">
-                                <rect key="frame" x="20" y="88" width="66" height="39"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ioO-eS-Dgb">
+                                <rect key="frame" x="20" y="88" width="374" height="39"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="32"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="oug-8S-axy">
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="oug-8S-axy">
                                 <rect key="frame" x="20" y="135" width="374" height="678"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
                                 <color key="textColor" systemColor="labelColor"/>
@@ -157,6 +153,15 @@
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="Lei-zY-LOJ"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="oug-8S-axy" firstAttribute="bottom" secondItem="Lei-zY-LOJ" secondAttribute="bottom" id="7JZ-bX-2uI"/>
+                            <constraint firstItem="ioO-eS-Dgb" firstAttribute="leading" secondItem="Zi0-pH-CTW" secondAttribute="leadingMargin" id="BWv-1B-HJB"/>
+                            <constraint firstItem="oug-8S-axy" firstAttribute="top" secondItem="ioO-eS-Dgb" secondAttribute="bottom" constant="8" id="KPw-O0-8cE"/>
+                            <constraint firstItem="ioO-eS-Dgb" firstAttribute="top" secondItem="Lei-zY-LOJ" secondAttribute="top" id="LX7-ZU-JB2"/>
+                            <constraint firstItem="ioO-eS-Dgb" firstAttribute="leading" secondItem="oug-8S-axy" secondAttribute="leading" id="Vo4-EV-ckM"/>
+                            <constraint firstItem="ioO-eS-Dgb" firstAttribute="trailing" secondItem="oug-8S-axy" secondAttribute="trailing" id="hbz-lp-xGu"/>
+                            <constraint firstItem="ioO-eS-Dgb" firstAttribute="trailing" secondItem="Zi0-pH-CTW" secondAttribute="trailingMargin" id="pfv-4E-Wmx"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="9dl-Vt-vrY">
                         <rightBarButtonItems>
@@ -166,6 +171,7 @@
                     </navigationItem>
                     <connections>
                         <outlet property="bodyTextField" destination="oug-8S-axy" id="rXp-RP-vun"/>
+                        <outlet property="titleLabel" destination="ioO-eS-Dgb" id="Sza-XT-OPy"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="aPa-zg-2BI" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
